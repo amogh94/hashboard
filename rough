@@ -18,3 +18,14 @@ chrome.tabs.sendMessage(tabs[0].id, message, (response)=>{
 
 // How to send a message from content.js to background.js
 chrome.runtime.sendMessage(yourMessageStringOrObjectOrAnything);
+
+
+
+,
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+
+
+
+pluralsight:
+andrea.incampo@freudenberg-it.com
+Zeuss0ne!

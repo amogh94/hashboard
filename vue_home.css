@@ -1,0 +1,79 @@
+body{
+	min-width: 300px;
+	max-width: 300px;
+	max-height: 250px;
+	font-size: 13px;
+	background: #AAAAAA;
+	display: block;
+}
+
+input{
+	background: #BBBBBB;
+}
+
+#app{
+	margin-bottom: 0.5rem;
+}
+
+.hidden{
+	display: none;
+}
+
+.app-title{
+	color: blue;
+}
+
+ul{
+	list-style-type: none;
+	padding: 0;
+	/*border: 0.1rem solid black;*/
+}
+
+.list-item{
+	border: 0.1rem solid black;
+	border-radius: 0.5rem;
+	padding: 2px;
+	padding-left: 0.4rem;
+	padding-bottom: 0.4rem;
+	margin-top: 0.2rem;
+	font-size: 0.85rem;
+}
+
+.itemtext{
+	text-overflow: ellipsis;
+    white-space: nowrap; 
+    overflow: hidden;
+    display: block;
+}
+
+.viewing div{
+	display: flow-root;
+}
+
+.editing>input{
+	width: 100%;
+}
+
+.heading{
+	float: left;
+	margin: inherit;
+	font-weight: bold;
+	font-size: 0.95rem;
+}
+
+.icons{
+	/*background: url("delete.png");*/
+	width: 15px;
+	height: 15px;
+	/*margin-right: 5px;*/
+	float: right;
+	padding: 0.4rem;
+	cursor: pointer;
+}
+
+.edit-actions{
+	width: fit-content;
+    float: right;
+    padding: 0.2rem;
+	cursor: pointer;
+}

@@ -11,7 +11,7 @@
     ],
 
     "browser_action":{
-        "default_popup":"home.html",
+        "default_popup":"vue_home.html",
         "default_title":"Hashboard!"
     },
     "permissions": [
@@ -20,5 +20,7 @@
 
     "background":{
         "scripts":["background.js"]
-    }
+    },
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+
 }

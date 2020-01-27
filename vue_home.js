@@ -1,6 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', ()=>{
-	
+
 	Vue.component('app-title',{
 	  template: `<div class='app-title'>
 	  <h1>Hashboard</h1>
@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 			remove: function(event){
 				let index = this.$parent.$vnode.key;
 				this.$parent.$parent.userdata.splice(index,1);
+				storeData(this.$parent.$parent.userdata);
 				// this.$parent.$delete(this.$parent);
 			}
 		}
@@ -69,6 +70,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 		methods:{
 			toggle(){
 				this.item.hideEdit = !this.item.hideEdit;
+				this.$root.editing = !this.$root.editing;
 			},
 			edits(changed, title, text){
 				// if neither title nor text have changed
@@ -84,7 +86,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 					}
 					this.toggle();
 				}
-				
+				storeData(this.$parent.userdata);
 			}
 		}
 	});
@@ -103,26 +105,30 @@ document.addEventListener('DOMContentLoaded', ()=>{
 		`
 	});
 
+	let port = chrome.runtime.connect({name: 'hashboardPort'});
+
+	function storeData(list){
+    	chrome.runtime.sendMessage({message: "store", data: list});
+	}
+
 	chrome.runtime.sendMessage({message: "fetch"}, (fetchedData)=>{
 
 		if(!fetchedData){
-	        fetchedData = [{
-	            title: "LinkedIn",
-	            text: "https://www.linkedin.com/in/amogh-agnihotri/",
-	            hideEdit: false
-	        },{
-	            title: "GitHub",
-	            text: "https://github.com/amogh94",
-	            hideEdit: false
-	        }];
+			fetchedData = [];
+	        // fetchedData = [{
+	        //     title: "LinkedIn",
+	        //     text: "https://www.linkedin.com/in/amogh-agnihotri/",
+	        //     hideEdit: false
+	        // },{
+	        //     title: "GitHub",
+	        //     text: "https://github.com/amogh94",
+	        //     hideEdit: false
+	        // },{
+	        // 	title: "Personal Website",
+	        // 	text: "https://www.amoghagnihotri.com",
+	        // 	hideEdit: false
+	        // }];
     	}
-
-        let dataToStore = fetchedData;
-        dataToStore.push({title:"Reddit", text: "reddit.com"})
-
-		function storeData(){
-		    chrome.runtime.sendMessage({message: "store", data: dataToStore});
-		}
 
 		new Vue({
 			el: "#app",
@@ -131,7 +137,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
 			},
 			methods:{
 				newListItem(){
-					this.userList.push({title: '',text: '', hideEdit: true, isNew: true});
+					let newItem = {title: '',text: '', hideEdit: true, isNew: true};
+					this.userList.push(newItem);
 				}
 			}
 		});

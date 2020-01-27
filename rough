@@ -29,3 +29,23 @@ chrome.runtime.sendMessage(yourMessageStringOrObjectOrAnything);
 pluralsight:
 andrea.incampo@freudenberg-it.com
 Zeuss0ne!
+
+
+
+from backgroundjs:
+
+// chrome.runtime.onConnect.addListener(function (externalPort) {
+//     externalPort.onDisconnect.addListener(function () {
+
+//         alert("close event");
+//         console.log("onDisconnect")
+//         // when out of focus, then store
+//         chrome.storage.sync.set({"hashboard": dataToStore});
+//     })
+// });
+
+// 
+// chrome.storage.sync.get(['hashboard'], function(result) {
+
+//     }
+// });

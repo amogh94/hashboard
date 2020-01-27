@@ -19,26 +19,11 @@ chrome.runtime.onMessage.addListener(function(request,sender,sendResponse){
         });
         return true;
     }else if(request.message=="store"){
-        chrome.storage.sync.set({hashboard: request.data});
+        let store = {};
+        store[localStorageKey] = request.data;
+        chrome.storage.sync.set(store);
+        sendResponse();
     }else{
         sendResponse();
     }
 });
-
-
-
-// chrome.runtime.onConnect.addListener(function (externalPort) {
-//     externalPort.onDisconnect.addListener(function () {
-
-//         alert("close event");
-//         console.log("onDisconnect")
-//         // when out of focus, then store
-//         chrome.storage.sync.set({"hashboard": dataToStore});
-//     })
-// });
-
-// 
-// chrome.storage.sync.get(['hashboard'], function(result) {
-
-//     }
-// });

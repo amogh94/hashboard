@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 				<h4 class="heading">{{ item.title }}</h4>
 				<img class="icons" src="delete.png" v-on:click="remove" />
 		        <img class="icons" src="copy.png" v-bind:data-text="item.text" v-on:click="copy" />
-		        <img class="icons" src="edit.png" v-on:click="$emit('edit')"/>
+		        <img class="icons" src="edit.png" v-on:click="$emit('editClicked')"/>
             </div>
 			<span class="itemtext">{{ item.text }}</span>
 		</div>`,
@@ -34,19 +34,27 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 	Vue.component('list-item-editing',{
 		props:["item","hidden"],
+		data: function(){
+			return {
+				title: this.item.title,
+				text: this.item.text
+			}
+		},
 		template:
 		`<div class="editing" v-bind:class="{'hidden':!hidden}">
 			<div>
-				<input v-on:keyup="changeInput" class="heading" type="text" maxlength=30 placeholder="Title" v-bind:value="item.title" />
-				<span class="edit-actions">Cancel</span>
-				<span class="edit-actions" v-if="item.title && item.title.length">Save</span>
+				<input v-on:keyup="changeInputTitle" class="heading" type="text" maxlength=30 placeholder="Title" v-bind:value="title" />
+				<button v-on:click="$emit('edit',false)" class="edit-actions">Cancel</button>
+				<button v-on:click="$emit('edit',true, title, text)" class="edit-actions" v-if="title && text && title.length && text.length">Save</button>
 			</div>
-			<input type="text" class="itemtext" placeholder="Text" v-bind:value="item.text" />
+			<input v-on:keyup="changeInputText" type="text" class="itemtext" placeholder="Text" v-bind:value="text" />
 		</div>`,
 		methods: {
-			changeInput: function(event){
-				let index = this.$parent.$vnode.key;
-				this.$parent.$parent.userdata[index].title = event.target.value;
+			changeInputTitle: function(event){
+				this.title = event.target.value;
+			},
+			changeInputText: function(event){
+				this.text = event.target.value;
 			}
 		}
 	});
@@ -55,12 +63,28 @@ document.addEventListener('DOMContentLoaded', ()=>{
 		props:["item"],
 		template:
 		`<li>
-			<list-item-viewing v-on:edit="toggle" v-bind:item="item" v-bind:hidden="item.hideEdit"></list-item-viewing>
-			<list-item-editing v-bind:item="item" v-bind:hidden="item.hideEdit"></list-item-editing>
+			<list-item-viewing v-on:editClicked="toggle" v-bind:item="item" v-bind:hidden="item.hideEdit"></list-item-viewing>
+			<list-item-editing v-on:edit="edits" v-bind:item="item" v-bind:hidden="item.hideEdit"></list-item-editing>
 		</li>`,
 		methods:{
 			toggle(){
 				this.item.hideEdit = !this.item.hideEdit;
+			},
+			edits(changed, title, text){
+				// if neither title nor text have changed
+				if(!(title || text) && this.item.isNew){
+					// delete
+					this.$parent.userdata.pop();
+				}else{
+					this.item.isNew = false;
+					if(changed && text && title && text.length>0 && title.length>0){
+						const index = this.$vnode.key;
+						this.$parent.userdata[index].title = title;
+						this.$parent.userdata[index].text = text;
+					}
+					this.toggle();
+				}
+				
 			}
 		}
 	});
@@ -100,26 +124,16 @@ document.addEventListener('DOMContentLoaded', ()=>{
 		    chrome.runtime.sendMessage({message: "store", data: dataToStore});
 		}
 
-        // build UI here..
-
-        new Vue({
+		new Vue({
 			el: "#app",
 			data:{
 				userList: fetchedData
 			},
 			methods:{
 				newListItem(){
-					this.userList.push({title: '',text: 't', hideEdit: true});
+					this.userList.push({title: '',text: '', hideEdit: true, isNew: true});
 				}
 			}
 		});
-    });
-
-		
+    });	
 });
-
-
-document.addEventListener('unload', function(event) {
-	alert("unloaded");
-});
-

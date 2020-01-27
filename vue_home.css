@@ -50,6 +50,10 @@ ul{
 	display: flow-root;
 }
 
+.editing div{
+	display: inline-flex;
+}
+
 .editing>input{
 	width: 100%;
 }
@@ -74,6 +78,6 @@ ul{
 .edit-actions{
 	width: fit-content;
     float: right;
-    padding: 0.2rem;
+    padding: 0.1rem;
 	cursor: pointer;
 }

@@ -6,7 +6,7 @@
 
 ## Why was this written?
 
-When applying online (endlessly) to jobs, I observed that most applications require you to paste multiple URLs (like LinkedIn, GitHub, etc). It was extremely frustrating to have to open a new tab, type the URL or find its bookmark, copy it, and switch back to this tab again. 
+When applying online (endlessly) to jobs, I observed that most applications require you to paste multiple URLs (like LinkedIn, GitHub, etc). It was extremely frustrating to have to open a new tab, type the URL or find its bookmark, copy it, and switch back to the job application's tab again. 
 
 And to do this for each URL it asks for - I wanted to improve this experience.
 

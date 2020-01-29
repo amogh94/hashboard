@@ -9,8 +9,13 @@
     	<div id="app">
     		<app-title></app-title>
     		<app-list v-bind:userdata="userList"></app-list>
-    		<button v-on:click="newListItem">+</button>
-    		<center><a href="https://www.amoghagnihotri.com" target="_blank">About the developer</a></center>
+    		<center>
+                <button v-on:click="newListItem">+</button>
+                
+            </center>
+            <center class="about">
+                <strong><a href="https://www.amoghagnihotri.com" target="_blank">About</a></strong>
+            </center>
     	</div>
 	</body>
 	<script src="vue_home.js"></script>

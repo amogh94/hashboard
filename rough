@@ -49,3 +49,13 @@ from backgroundjs:
 
 //     }
 // });
+
+
+
+<h4 class="buttoninfo">Click below to quickly add texts that you frequently copy!</h4>
+
+"icons": { 
+        "16": "icons\/logo_16.png",
+        "48": "icons\/logo_48.png",
+        "128": "icons\/logo_128.png"
+    }

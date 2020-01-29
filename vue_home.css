@@ -3,12 +3,9 @@ body{
 	max-width: 300px;
 	max-height: 250px;
 	font-size: 13px;
-	background: #AAAAAA;
+	/*background: #e3e6e8;*/
+	background: white;
 	display: block;
-}
-
-input{
-	background: #BBBBBB;
 }
 
 #app{
@@ -20,7 +17,15 @@ input{
 }
 
 .app-title{
-	color: blue;
+	/*color: #0d18a2;*/
+	color: #1a73e8;
+	text-align: center;
+	/*border-bottom: solid 0.1rem #445533;*/
+	padding-bottom: 1rem;
+}
+
+.logo-head{
+	display: inherit;
 }
 
 ul{
@@ -30,11 +35,12 @@ ul{
 }
 
 .list-item{
-	border: 0.1rem solid black;
+	border-bottom: 0.1rem solid #1a73e8;
 	border-radius: 0.5rem;
-	padding: 2px;
+	/*padding: 2px;
 	padding-left: 0.4rem;
-	padding-bottom: 0.4rem;
+	padding-bottom: 0.4rem;*/
+	padding: 0.2rem;
 	margin-top: 0.2rem;
 	font-size: 0.85rem;
 }
@@ -46,16 +52,21 @@ ul{
     display: block;
 }
 
+.editing{
+	padding: inherit;
+}
+
+.viewing{
+	padding-left: 0.3rem;
+}
+
 .viewing div{
 	display: flow-root;
 }
 
 .editing div{
 	display: inline-flex;
-}
-
-.editing>input{
-	width: 100%;
+    margin-bottom: 0.15rem;
 }
 
 .heading{
@@ -63,6 +74,22 @@ ul{
 	margin: inherit;
 	font-weight: bold;
 	font-size: 0.95rem;
+	min-width: auto;
+}
+
+input{
+	width: 100%;
+	margin-right: 0.3rem !important;
+	outline: 0.33rem;
+	text-indent: 0.2rem;
+	background: inherit;
+	padding: 2px;
+}
+
+input:focus, input:active {
+	border-bottom: 0.1rem solid #1a73e8; /*#1c87c9;*/
+	
+	
 }
 
 .icons{
@@ -76,8 +103,53 @@ ul{
 }
 
 .edit-actions{
-	width: fit-content;
-    float: right;
-    padding: 0.1rem;
+	/*width: fit-content;
+    float: right;*/
+    /*padding: 0.15rem;*/
 	cursor: pointer;
+	color: #e3e6e8;
+	background: #1a73e8;
+	/*border-radius: 10%;*/
+	border: 1px solid #1a73e8;
+	padding-left: 0.3rem;
+	padding-right: 0.3rem;
+	bottom: 0px;
+	font-weight: bold;
 }
+
+.cancel{
+	color: #1a73e8;
+	background: white;
+	border: 1px solid #1a73e8;
+	font-weight: normal;
+}
+
+#app>center>button{
+	display: block;
+    border-radius: 50%;
+    border: 1px solid;
+    color: #e3e6e8;
+    height: 3rem;
+    width: 3rem;
+    font-size: 2rem;
+    background: #1a73e8;
+}
+
+.buttoninfo{
+	text-align: center;
+}
+
+.about{
+	border-top: 0.15rem solid black;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.7rem;
+}
+
+.about a{
+	text-decoration: underline;
+	/*color: #1a73e8;*/
+	font-style: italic;
+}
+
+/* danger class is:#d93025 */;

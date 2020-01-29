@@ -1,10 +1,15 @@
 
+/**
+todo: 1 image sprite for the click edit delete icons
+**/
+
 document.addEventListener('DOMContentLoaded', ()=>{
 
 	Vue.component('app-title',{
 	  template: `<div class='app-title'>
-	  <h1>Hashboard</h1>
-	  <h4>Quick access to links or texts or just about any text</h4>
+	  <h1 title="Click 'About' to know more." class="hidden">Hashboard</h1>
+	  <a target="_blank" href="https://gmail.com" class="logo-head"><img src="icons/logo2.jpg"  /></a>
+	  <span>Save and copy frequently used texts on the fly!</span>
 	  </div>`
 	});
 
@@ -14,9 +19,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
 		`<div class="viewing" v-bind:class="{'hidden':hidden}">
 			<div>
 				<h4 class="heading">{{ item.title }}</h4>
-				<img class="icons" src="delete.png" v-on:click="remove" />
-		        <img class="icons" src="copy.png" v-bind:data-text="item.text" v-on:click="copy" />
-		        <img class="icons" src="edit.png" v-on:click="$emit('editClicked')"/>
+				<img class="icons" src="icons/delete.png" v-on:click="remove" />
+		        <img class="icons" src="icons/copy.png" v-bind:data-text="item.text" v-on:click="copy" />
+		        <img class="icons" src="icons/edit.png" v-on:click="$emit('editClicked')"/>
             </div>
 			<span class="itemtext">{{ item.text }}</span>
 		</div>`,
@@ -45,7 +50,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 		`<div class="editing" v-bind:class="{'hidden':!hidden}">
 			<div>
 				<input v-on:keyup="changeInputTitle" class="heading" type="text" maxlength=30 placeholder="Title" v-bind:value="title" />
-				<button v-on:click="$emit('edit',false)" class="edit-actions">Cancel</button>
+				<button v-on:click="$emit('edit',false)" class="edit-actions cancel">Cancel</button>
 				<button v-on:click="$emit('edit',true, title, text)" class="edit-actions" v-if="title && text && title.length && text.length">Save</button>
 			</div>
 			<input v-on:keyup="changeInputText" type="text" class="itemtext" placeholder="Text" v-bind:value="text" />
@@ -100,7 +105,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 			</ul>
 		</div>
 		<div v-else>
-			<h3>Click the + button to add any quick links or texts!</h3>
+			
 		</div>
 		`
 	});

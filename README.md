@@ -4,6 +4,12 @@
 
 **Credit** to [kunalnarangtheone](https://github.com/kunalnarangtheone/) for naming.
 
+## Why was this written?
+
+When applying online (endlessly) to jobs, I observed that most applications require you to paste multiple URLs (like LinkedIn, GitHub, etc). It was extremely frustrating to have to open a new tab, type the URL or find its bookmark, copy it, and switch back to this tab again. 
+
+And to do this for each URL it asks for - I wanted to improve this experience.
+
 # How to use this extension
 
 1. You will see this when it is opened for the first time. Hit the plus button to add a new text.

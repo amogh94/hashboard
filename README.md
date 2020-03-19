@@ -30,7 +30,7 @@ And to do this for each URL it asks for - I wanted to improve this experience.
 
 # How to install
 
-- Clone this repository.
+- Clone this repository or download as zip.
 - Type the following URL on the browser:
 ```
 chrome://extensions

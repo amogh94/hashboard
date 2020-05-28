@@ -2,6 +2,12 @@
 
 "Hashboard" is a simple extension to store short texts. The idea is to be able to copy numerous texts (like URLs, names, or any other short texts) to your clipboard, without leaving the current tab. Option to add, edit, copy, and delete are provided.
 
+I started out with that idea. Having used the extension regularly, I added another feature - to move elements up and down the list.
+
+Then, I implemented a searchbar - it filters items by their title.
+
+While implementing search, I somehow lost the list data I previously had, and wished there was a way to recover them. This inspired the latest feature - download the list as a CSV file.
+
 **Credit** to [kunalnarangtheone](https://github.com/kunalnarangtheone/) for naming.
 
 ## Why was this written?

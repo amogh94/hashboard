@@ -69,6 +69,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
 		props:["item"],
 		template:
 		`<li>
+			<div class="up-down-div">
+				<button v-on:click="moveUp"><i class="arrow arrowup"></i></button>
+
+				<button v-on:click="moveDown"><i class="arrow arrowdown"></i></button>
+			</div>
 			<list-item-viewing v-on:editClicked="toggle" v-bind:item="item" v-bind:hidden="item.hideEdit"></list-item-viewing>
 			<list-item-editing v-on:edit="edits" v-bind:item="item" v-bind:hidden="item.hideEdit"></list-item-editing>
 		</li>`,
@@ -92,6 +97,15 @@ document.addEventListener('DOMContentLoaded', ()=>{
 					this.toggle();
 				}
 				storeData(this.$parent.userdata);
+			},
+			moveUp(event){
+				const index = this.$vnode.key;
+				// emit an event
+				this.$emit('move',0, index); // 0 means up
+			},
+			moveDown(event){
+				const index = this.$vnode.key;
+				this.$emit('move',1, index); // 1 means down
 			}
 		}
 	});
@@ -101,13 +115,29 @@ document.addEventListener('DOMContentLoaded', ()=>{
 		template:
 		`<div v-if="userdata.length" class='app-list'>
 			<ul>
-				<list-item class="list-item" v-for="(userListItem,index) in userdata" v-bind:item="userListItem" v-bind:key="index"></list-item>
+				<list-item class="list-item" v-on:move="moveUpDown" v-for="(userListItem,index) in userdata" v-bind:item="userListItem" v-bind:key="index"></list-item>
 			</ul>
 		</div>
 		<div v-else>
 			
 		</div>
-		`
+		`,
+		methods:{
+			moveUpDown(moveType, index){
+				if(moveType==0 && index==0){
+					return;
+				}else if(moveType == 1 && index==this.userdata.length-1){
+					return;
+				}
+
+				const thatIndex = (moveType==0)?(index-1):(index+1);
+				const thisObject = this.userdata[index];
+				const thatObject = this.userdata[thatIndex];
+				this.$set(this.userdata,thatIndex,thisObject);
+				this.$set(this.userdata,index,thatObject);
+				storeData(this.userdata);
+			}
+		}
 	});
 
 	let port = chrome.runtime.connect({name: 'hashboardPort'});

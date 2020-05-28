@@ -1,6 +1,6 @@
 body{
-	min-width: 300px;
-	max-width: 300px;
+	min-width: 350px;
+	max-width: 350px;
 	max-height: 250px;
 	font-size: 13px;
 	/*background: #e3e6e8;*/
@@ -43,6 +43,22 @@ ul{
 	padding: 0.2rem;
 	margin-top: 0.2rem;
 	font-size: 0.85rem;
+	display: inline-flex;
+	width: -webkit-fill-available;
+}
+
+.list-item>.up-down-div{
+	display: inherit;
+}
+.up-down-div button{
+	background: none;
+    border: none;outline: 0 !important;
+}
+.up-down-div button:hover{
+	background: #e7ebfe;
+	border-radius: 8px;
+	border: thin solid #e7ebfe;
+	cursor: pointer;
 }
 
 .itemtext{
@@ -54,10 +70,14 @@ ul{
 
 .editing{
 	padding: inherit;
+	float:right;
+	width:80%;
 }
 
 .viewing{
 	padding-left: 0.3rem;
+	float:right;
+	width:80%;
 }
 
 .viewing div{
@@ -150,6 +170,24 @@ input:focus, input:active {
 	text-decoration: underline;
 	/*color: #1a73e8;*/
 	font-style: italic;
+}
+
+/*
+arrow*/
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+.arrowup {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.arrowdown {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 }
 
 /* danger class is:#d93025 */;

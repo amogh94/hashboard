@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
 				let index = this.$parent.$vnode.key;
 				this.$parent.$parent.userdata.splice(index,1);
 				storeData(this.$parent.$parent.userdata);
-				// this.$parent.$delete(this.$parent);
 			}
 		}
 	});
@@ -66,13 +65,13 @@ document.addEventListener('DOMContentLoaded', ()=>{
 	});
 
 	Vue.component('list-item',{
-		props:["item"],
+		props:["item","nofilter"],
 		template:
-		`<li>
+		`<li v-if="item.visible">
 			<div class="up-down-div">
-				<button v-on:click="moveUp"><i class="arrow arrowup"></i></button>
-
-				<button v-on:click="moveDown"><i class="arrow arrowdown"></i></button>
+				<button v-bind:class="{'arrowdisable':!nofilter}" v-on:click="moveUp"><i class="arrow arrowup" ></i></button>
+				<button v-bind:class="{'arrowdisable':!nofilter}" v-on:click="moveDown"><i class="arrow arrowdown"></i></button>
+			</div>
 			</div>
 			<list-item-viewing v-on:editClicked="toggle" v-bind:item="item" v-bind:hidden="item.hideEdit"></list-item-viewing>
 			<list-item-editing v-on:edit="edits" v-bind:item="item" v-bind:hidden="item.hideEdit"></list-item-editing>
@@ -111,11 +110,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
 	});
 
 	Vue.component('app-list',{
-		props:["userdata"],
+		props:["userdata","nofilter"],
 		template:
 		`<div v-if="userdata.length" class='app-list'>
 			<ul>
-				<list-item class="list-item" v-on:move="moveUpDown" v-for="(userListItem,index) in userdata" v-bind:item="userListItem" v-bind:key="index"></list-item>
+				<list-item class="list-item" v-on:move="moveUpDown" v-for="(userListItem,index) in userdata" v-bind:nofilter="nofilter" v-bind:item="userListItem" v-bind:key="index"></list-item>
 			</ul>
 		</div>
 		<div v-else>
@@ -140,6 +139,54 @@ document.addEventListener('DOMContentLoaded', ()=>{
 		}
 	});
 
+	Vue.component('search-bar',{
+		props:["listexists","userdata"],
+		data:function(){
+			let data = this.userdata;
+			data = data.map(item=>{
+				let copy = {};
+				copy.title = item.title;
+				copy.text = item.text;
+				return copy;
+			}); 
+			let headings = Object.keys(data[0]);
+			let csv = headings.join(",")+"\n";
+			for(let obj of data){
+				csv += obj[headings[0]]+","+obj[headings[1]]+"\n";
+			};
+			return {
+				csv: encodeURI(csv)
+			};
+		},
+		template:
+		`<div v-if="listexists">
+			<input id="searchbar" v-on:keyup="applyFilter" placeholder="Search">
+			<img class="download-icon" v-on:click="download" src="icons/download.png" title="Download as CSV"/>
+			<a ref="download" class="hidden" download="MyHashboardData.csv" v-bind:href="'data:application/octet-stream,' + csv">Click here</a>
+
+		</div>`,
+		methods:{
+			applyFilter(event){
+				const text = event.target.value;
+				if(text.length){
+					this.$parent.nofilter = false;
+					for(let i in this.userdata){
+						let pattern = new RegExp(text,'gi');
+						this.userdata[i].visible = (this.userdata[i].title.match(pattern)!=null);
+					}
+				}else{
+					this.$parent.nofilter = true;
+					for(let i in this.userdata){
+						this.userdata[i].visible = true;
+					}
+				}
+			},
+			download(){
+				this.$refs.download.click();
+			}
+		}
+	});
+
 	let port = chrome.runtime.connect({name: 'hashboardPort'});
 
 	function storeData(list){
@@ -150,29 +197,24 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 		if(!fetchedData){
 			fetchedData = [];
-	        // fetchedData = [{
-	        //     title: "LinkedIn",
-	        //     text: "https://www.linkedin.com/in/amogh-agnihotri/",
-	        //     hideEdit: false
-	        // },{
-	        //     title: "GitHub",
-	        //     text: "https://github.com/amogh94",
-	        //     hideEdit: false
-	        // },{
-	        // 	title: "Personal Website",
-	        // 	text: "https://www.amoghagnihotri.com",
-	        // 	hideEdit: false
-	        // }];
     	}
-
+        fetchedData = fetchedData.map(item=>{
+        	if(!item.hasOwnProperty('hideEdit')){
+        		item.hideEdit = false;
+        	}
+        	item.visible = true;
+        	return item;
+        });
 		new Vue({
 			el: "#app",
 			data:{
-				userList: fetchedData
+				userList: fetchedData,
+				listExists : fetchedData.length>0,
+				nofilter: true
 			},
 			methods:{
 				newListItem(){
-					let newItem = {title: '',text: '', hideEdit: true, isNew: true};
+					let newItem = {title: '',text: '', hideEdit: true, isNew: true, visible:true};
 					this.userList.push(newItem);
 				}
 			}

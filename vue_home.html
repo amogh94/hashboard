@@ -3,15 +3,14 @@
         <title>Hashboard</title>
         <link rel="stylesheet" href="vue_home.css">
         <script src="vue.js"></script>
-        
     </head>
     <body>
     	<div id="app">
     		<app-title></app-title>
-    		<app-list v-bind:userdata="userList"></app-list>
+            <search-bar v-bind:listexists="listExists" v-bind:userdata="userList"></search-bar>
+    		<app-list v-bind:userdata="userList" v-bind:nofilter="nofilter"></app-list>
     		<center>
-                <button v-on:click="newListItem">+</button>
-                
+                <button v-if="nofilter" v-on:click="newListItem">+</button>
             </center>
             <center class="about">
                 <strong><a href="https://www.amoghagnihotri.com" target="_blank">About</a></strong>

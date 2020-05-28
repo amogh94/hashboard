@@ -50,6 +50,8 @@ ul{
 .list-item>.up-down-div{
 	display: inherit;
 }
+
+
 .up-down-div button{
 	background: none;
     border: none;outline: 0 !important;
@@ -122,6 +124,16 @@ input:focus, input:active {
 	cursor: pointer;
 }
 
+.download-icon{
+	float:right;
+	margin-right: 15px;
+    padding: 0.4rem;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+
 .edit-actions{
 	/*width: fit-content;
     float: right;*/
@@ -188,6 +200,34 @@ arrow*/
 .arrowdown {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
+}
+
+.up-down-div .arrowdisable .arrowup{
+	border: solid #d3d3d3;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+	transform: rotate(-135deg);
+	-webkit-transform: rotate(-135deg);
+}
+
+.up-down-div .arrowdisable .arrowdown{
+	border: solid #d3d3d3;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+}
+
+.arrowdisable, .arrowdisable:hover{
+	cursor: not-allowed;
+	pointer-events: none;
+}
+
+#searchbar{
+	width:85%;
+	margin-top: 3px;
 }
 
 /* danger class is:#d93025 */;

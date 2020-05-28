@@ -20,6 +20,19 @@ chrome.runtime.onConnect.addListener(function (externalPort) {
             // sendResponse(fetchData);
             chrome.storage.sync.get(localStorageKey,result=>{
                 const response = result[localStorageKey];
+        //         const response = [{
+        //     title: "LinkedIn",
+        //     text: "https://www.linkedin.com/in/amogh-agnihotri/",
+        //     hideEdit: false
+        // },{
+        //     title: "GitHub",
+        //     text: "https://github.com/amogh94",
+        //     hideEdit: false
+        // },{
+        //     title: "Personal Website",
+        //     text: "https://www.amoghagnihotri.com",
+        //     hideEdit: false
+        // }]
                 fetched = response;
                 sendResponse(response);
             });

@@ -18,7 +18,7 @@ And to do this for each URL it asks for - I wanted to improve this experience.
 
 # How to use this extension
 
-(**Update**: The looks have changed due to recently added features of: moving list items up and down, search bar, and download as CSV)
+(**Update**: The looks have changed due to recently added features)
 
 1. You will see this when it is opened for the first time. Hit the plus button to add a new text.
 

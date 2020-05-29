@@ -1,0 +1,29 @@
+{
+  "name": "hashboard",
+  "version": "1.0.0",
+  "description": "\"Hashboard\" is a simple extension to store short texts. The idea is to be able to copy numerous texts (like URLs, names, or any other short texts) to your clipboard, without leaving the current tab. Option to add, edit, copy, and delete are provided.",
+  "main": "app.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config app.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amogh94/hashboard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amogh94/hashboard/issues"
+  },
+  "homepage": "https://github.com/amogh94/hashboard#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "vue": "^2.6.11",
+    "vue-loader": "^15.9.2",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}

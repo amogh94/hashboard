@@ -1,14 +1,13 @@
 # About
 
-"Hashboard" is a simple extension to store short texts. The idea is to be able to copy numerous texts (like URLs, names, or any other short texts) to your clipboard, without leaving the current tab. Option to add, edit, copy, and delete are provided.
+"Hashboard" is a simple extension to store short texts. The idea is to be able to copy numerous texts (like URLs, names, or any other short texts) to your clipboard, without leaving the current tab. Option to add, edit, copy, and delete are provided. 
 
-I started out with that idea. Having used the extension regularly, I added another feature - to move elements up and down the list.
+Having started out that way, I have added the following features:
+- to rearrange the items on the list.
+- a searchbar to filters items by their title.
+- download the list as a CSV file (while implementing search, I somehow lost the list data I previously had, and wished there was a way to recover them - leading to this feature)
 
-Then, I implemented a searchbar - it filters items by their title.
-
-While implementing search, I somehow lost the list data I previously had, and wished there was a way to recover them. This inspired the latest feature - download the list as a CSV file.
-
-**Credit** to [kunalnarangtheone](https://github.com/kunalnarangtheone/) for naming.
+**Credit** to [kunalnarangtheone](https://github.com/kunalnarangtheone/) for naming the extension.
 
 ## Why was this written?
 
@@ -38,13 +37,14 @@ And to do this for each URL it asks for - I wanted to improve this experience.
 
 # How to install
 
-- Clone this repository or download as zip.
+- Download the zip file at [dist-zip](https://github.com/amogh94/hashboard/blob/master/dist-zip/hashboard-v1.0.0.zip).
+- Extract the zip file into a folder of your choice.
 - Type the following URL on the browser:
 ```
 chrome://extensions
 ```
 - Turn on 'Developer mode'.
-- Click 'Load unpacked' button and select the folder where the repository was cloned.
+- Click 'Load unpacked' button and select the extracted folder (hashboard-v1.0.0).
 
 You should be able to see this extension on your browser toolbar now.
 

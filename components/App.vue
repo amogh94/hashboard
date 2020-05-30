@@ -7,7 +7,7 @@
         <button v-if="nofilter" v-on:click="newListItem">+</button>
     </center>
     <center class="about">
-        <strong><a href="https://www.amoghagnihotri.com" target="_blank">Abouts</a></strong>
+        <strong><a href="https://www.amoghagnihotri.com" target="_blank">About</a></strong>
     </center>
   </div>
 </template>

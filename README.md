@@ -48,6 +48,26 @@ chrome://extensions
 
 You should be able to see this extension on your browser toolbar now.
 
+# Developer Guide
+
+- NPM is a prerequisite. At the repository directory, run:
+```
+npm install
+```
+
+- Use the 'dist' folder to load the extension into the browser, instead of the unzipped folder mentioned above.
+
+- Whenever you change a Vue component or home.js, run the following command to rebuild the extension. More specifically, you must be looking for the 'dist' folder to refresh when this command executes.
+```
+npm run build
+```
+
+- To generate the zip file in the [dist-zip](https://github.com/amogh94/hashboard/blob/master/dist-zip/) folder, run this command:
+```
+npm run build-zip
+```
+
+
 # Contribute
 
 All forms of contributions are welcome, such as:
@@ -56,3 +76,6 @@ All forms of contributions are welcome, such as:
 - Feature suggestion
 
 Please email me at asamogh94@gmail.com for any queries and suggestions.
+
+# Resources
+Thanks to [Hugo Alliaume](https://github.com/Kocal/vue-web-extension) for the boilerplate code for Vue in the context of extensions. 

@@ -52,19 +52,20 @@ You should be able to see this extension on your browser toolbar now.
 
 # Developer Guide
 
-- NPM is a prerequisite. At the repository directory, run:
+- NPM is a prerequisite.
+- At the repository directory, run:
 ```
 npm install
 ```
 
-- Use the 'dist' folder to load the extension into the browser, instead of the unzipped folder mentioned above.
-
-- Whenever you change a Vue component or home.js, run the following command to rebuild the extension. More specifically, you must be looking for the 'dist' folder to refresh when this command executes.
+- Use the 'dist' folder to load the extension into the browser, instead of the unzipped folder mentioned above.  If you don't see the 'dist' folder yet, run:
 ```
 npm run build
 ```
 
-- To generate the zip file in the [dist-zip](https://github.com/amogh94/hashboard/blob/master/dist-zip/) folder, run this command:
+- Whenever you change a Vue component or home.js, use the above build command to rebuild the extension. More specifically, you must be looking for the 'dist' folder to refresh when this command executes.
+
+- To generate the zip file (found in the [dist-zip](https://github.com/amogh94/hashboard/blob/master/dist-zip/) folder), run this command:
 ```
 npm run build-zip
 ```

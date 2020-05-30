@@ -37,12 +37,6 @@ export default {
 	display: inline-flex;
     margin-bottom: 0.15rem;
 }
-.cancel{
-	color: #1a73e8;
-	background: white;
-	border: 1px solid #1a73e8;
-	font-weight: normal;
-}
 .edit-actions{
 	cursor: pointer;
 	color: #e3e6e8;
@@ -52,5 +46,11 @@ export default {
 	padding-right: 0.3rem;
 	bottom: 0px;
 	font-weight: bold;
+}
+.cancel{
+	color: #1a73e8;
+	background: white;
+	border: 1px solid #1a73e8;
+	font-weight: normal;
 }
 </style>

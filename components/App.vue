@@ -7,7 +7,7 @@
         <button v-if="nofilter" v-on:click="newListItem">+</button>
     </center>
     <center class="about">
-        <strong><a href="https://www.amoghagnihotri.com" target="_blank">About</a></strong>
+        <strong><a href="https://www.amoghagnihotri.com" target="_blank">Abouts</a></strong>
     </center>
   </div>
 </template>
@@ -24,7 +24,7 @@ export default {
     },
     props:["userList","listExists","nofilter"],
     data:function(){
-        return {userList: this.userList, listExists: this.listExists, nofilter: this.nofilter};
+        return {userList: this.userList || [], listExists: this.listExists, nofilter: this.nofilter};
     },
     methods:{
         newListItem(){

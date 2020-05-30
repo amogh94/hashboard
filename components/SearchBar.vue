@@ -30,14 +30,14 @@ export default {
     props:["listexists","userdata"],
     data:function(){
         let data = this.userdata;
-        console.log(data);
         data = data.map(item=>{
             let copy = {};
             copy.title = item.title;
             copy.text = item.text;
             return copy;
         }); 
-        let headings = Object.keys(data[0]);
+        let headings = ["title","text"];
+        try{headings = Object.keys(data[0]);}catch(e){}
         let csv = headings.join(",")+"\n";
         for(let obj of data){
             csv += obj[headings[0]]+","+obj[headings[1]]+"\n";

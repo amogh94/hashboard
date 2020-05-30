@@ -2,16 +2,25 @@
   <div id="app">
     <AppTitle></AppTitle>
     <SearchBar v-bind:listexists="listExists" v-bind:userdata="userList"></SearchBar>
+    <AppList v-bind:userdata="userList" v-bind:nofilter="nofilter"></AppList>
+    <center>
+        <button v-if="nofilter" v-on:click="newListItem">+</button>
+    </center>
+    <center class="about">
+        <strong><a href="https://www.amoghagnihotri.com" target="_blank">About</a></strong>
+    </center>
   </div>
 </template>
 
 <script>
 import AppTitle from './AppTitle.vue';
 import SearchBar from './SearchBar.vue';
+import AppList from './AppList.vue';
 export default {
     components: {
         AppTitle,
-        SearchBar
+        SearchBar,
+        AppList
     },
     props:["userList","listExists","nofilter"],
     data:function(){

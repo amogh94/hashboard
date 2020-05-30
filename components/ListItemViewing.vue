@@ -19,3 +19,34 @@ export default {
     }
 }
 </script>
+<style module>
+.itemtext{
+	text-overflow: ellipsis;
+    white-space: nowrap; 
+    overflow: hidden;
+    display: block;
+}
+.viewing{
+	padding-left: 0.3rem;
+	float:right;
+	width:80%;
+}
+
+.viewing div{
+	display: flow-root;
+}
+.heading{
+	float: left;
+	margin: inherit;
+	font-weight: bold;
+	font-size: 0.95rem;
+	min-width: auto;
+}
+.icons{
+	width: 15px;
+	height: 15px;
+	float: right;
+	padding: 0.4rem;
+	cursor: pointer;
+}
+</style>

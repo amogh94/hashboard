@@ -57,3 +57,56 @@ export default {
     }
 }
 </script>
+<style module>
+.list-item>.up-down-div{
+	display: inherit;
+}
+
+.up-down-div button{
+	background: none;
+    border: none;outline: 0 !important;
+}
+.up-down-div button:hover{
+	background: #e7ebfe;
+	border-radius: 8px;
+	border: thin solid #e7ebfe;
+	cursor: pointer;
+}
+.up-down-div .arrowdisable .arrowup{
+	border: solid #d3d3d3;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+	transform: rotate(-135deg);
+	-webkit-transform: rotate(-135deg);
+}
+
+.up-down-div .arrowdisable .arrowdown{
+	border: solid #d3d3d3;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+.arrowup {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.arrowdown {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+.arrowdisable, .arrowdisable:hover{
+	cursor: not-allowed;
+	pointer-events: none;
+}
+</style>

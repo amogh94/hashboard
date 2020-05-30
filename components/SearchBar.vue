@@ -48,3 +48,17 @@ export default {
     }
 }
 </script>
+<style module>
+#searchbar{
+	width:85%;
+	margin-top: 3px;
+}
+.download-icon{
+	float:right;
+	margin-right: 15px;
+    padding: 0.4rem;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+</style>

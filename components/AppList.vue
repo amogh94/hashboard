@@ -43,3 +43,18 @@ export default {
     }
 }
 </script>
+<style module>
+ul{
+	list-style-type: none;
+	padding: 0;
+}
+.list-item{
+	border-bottom: 0.1rem solid #1a73e8;
+	border-radius: 0.5rem;
+	padding: 0.2rem;
+	margin-top: 0.2rem;
+	font-size: 0.85rem;
+	display: inline-flex;
+	width: -webkit-fill-available;
+}
+</style>

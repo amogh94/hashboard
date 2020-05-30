@@ -23,9 +23,9 @@
     },
     "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
     "icons": { 
-        "16": "icons\/logo2_16.png",
-        "48": "icons\/logo2_48.png",
-        "128": "icons\/logo2_128.png"
+        "16": "icons\/logo_16.png",
+        "48": "icons\/logo_48.png",
+        "128": "icons\/logo_128.png"
     }
 
 }

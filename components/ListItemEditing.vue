@@ -27,3 +27,30 @@ export default {
     }
 }
 </script>
+<style module>
+.editing{
+	padding: inherit;
+	float:right;
+	width:80%;
+}
+.editing div{
+	display: inline-flex;
+    margin-bottom: 0.15rem;
+}
+.cancel{
+	color: #1a73e8;
+	background: white;
+	border: 1px solid #1a73e8;
+	font-weight: normal;
+}
+.edit-actions{
+	cursor: pointer;
+	color: #e3e6e8;
+	background: #1a73e8;
+	border: 1px solid #1a73e8;
+	padding-left: 0.3rem;
+	padding-right: 0.3rem;
+	bottom: 0px;
+	font-weight: bold;
+}
+</style>

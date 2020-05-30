@@ -1,9 +1,8 @@
-body{
+/* body{
 	min-width: 350px;
 	max-width: 350px;
 	max-height: 250px;
 	font-size: 13px;
-	/*background: #e3e6e8;*/
 	background: white;
 	display: block;
 }
@@ -14,40 +13,34 @@ body{
 
 .hidden{
 	display: none;
-}
+} */
 
-.app-title{
-	/*color: #0d18a2;*/
+/* .app-title{
 	color: #1a73e8;
 	text-align: center;
-	/*border-bottom: solid 0.1rem #445533;*/
 	padding-bottom: 1rem;
 }
 
 .logo-head{
 	display: inherit;
-}
+} */
 
-ul{
+/* ul{
 	list-style-type: none;
 	padding: 0;
-	/*border: 0.1rem solid black;*/
-}
+} */
 
-.list-item{
+/* .list-item{
 	border-bottom: 0.1rem solid #1a73e8;
 	border-radius: 0.5rem;
-	/*padding: 2px;
-	padding-left: 0.4rem;
-	padding-bottom: 0.4rem;*/
 	padding: 0.2rem;
 	margin-top: 0.2rem;
 	font-size: 0.85rem;
 	display: inline-flex;
 	width: -webkit-fill-available;
-}
+} */
 
-.list-item>.up-down-div{
+/* .list-item>.up-down-div{
 	display: inherit;
 }
 
@@ -61,22 +54,22 @@ ul{
 	border-radius: 8px;
 	border: thin solid #e7ebfe;
 	cursor: pointer;
-}
+} */
 
-.itemtext{
+/* .itemtext{
 	text-overflow: ellipsis;
     white-space: nowrap; 
     overflow: hidden;
     display: block;
-}
+} */
 
-.editing{
+/* .editing{
 	padding: inherit;
 	float:right;
 	width:80%;
-}
+} */
 
-.viewing{
+/* .viewing{
 	padding-left: 0.3rem;
 	float:right;
 	width:80%;
@@ -84,22 +77,22 @@ ul{
 
 .viewing div{
 	display: flow-root;
-}
+} */
 
-.editing div{
+/* .editing div{
 	display: inline-flex;
     margin-bottom: 0.15rem;
-}
+} */
 
-.heading{
+/* .heading{
 	float: left;
 	margin: inherit;
 	font-weight: bold;
 	font-size: 0.95rem;
 	min-width: auto;
-}
+} */
 
-input{
+/* input{
 	width: 100%;
 	margin-right: 0.3rem !important;
 	outline: 0.33rem;
@@ -112,51 +105,45 @@ input:focus, input:active {
 	border-bottom: 0.1rem solid #1a73e8; /*#1c87c9;*/
 	
 	
-}
+} */
 
-.icons{
-	/*background: url("delete.png");*/
+/* .icons{
 	width: 15px;
 	height: 15px;
-	/*margin-right: 5px;*/
 	float: right;
 	padding: 0.4rem;
 	cursor: pointer;
-}
+} */
 
-.download-icon{
+/* .download-icon{
 	float:right;
 	margin-right: 15px;
     padding: 0.4rem;
     cursor: pointer;
     width: 18px;
     height: 18px;
-}
+} */
 
 
-.edit-actions{
-	/*width: fit-content;
-    float: right;*/
-    /*padding: 0.15rem;*/
+/* .edit-actions{
 	cursor: pointer;
 	color: #e3e6e8;
 	background: #1a73e8;
-	/*border-radius: 10%;*/
 	border: 1px solid #1a73e8;
 	padding-left: 0.3rem;
 	padding-right: 0.3rem;
 	bottom: 0px;
 	font-weight: bold;
-}
+} */
 
-.cancel{
+/* .cancel{
 	color: #1a73e8;
 	background: white;
 	border: 1px solid #1a73e8;
 	font-weight: normal;
-}
+} */
 
-#app>center>button{
+/* #app>center>button{
 	display: block;
     border-radius: 50%;
     border: 1px solid;
@@ -180,13 +167,10 @@ input:focus, input:active {
 
 .about a{
 	text-decoration: underline;
-	/*color: #1a73e8;*/
 	font-style: italic;
-}
+} */
 
-/*
-arrow*/
-.arrow {
+/* .arrow {
   border: solid black;
   border-width: 0 3px 3px 0;
   display: inline-block;
@@ -200,9 +184,9 @@ arrow*/
 .arrowdown {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
-}
+} */
 
-.up-down-div .arrowdisable .arrowup{
+/* .up-down-div .arrowdisable .arrowup{
 	border: solid #d3d3d3;
 	border-width: 0 3px 3px 0;
 	display: inline-block;
@@ -218,16 +202,16 @@ arrow*/
 	padding: 3px;
 	transform: rotate(45deg);
 	-webkit-transform: rotate(45deg);
-}
+} */
 
-.arrowdisable, .arrowdisable:hover{
+/* .arrowdisable, .arrowdisable:hover{
 	cursor: not-allowed;
 	pointer-events: none;
-}
+} */
 
-#searchbar{
+/* #searchbar{
 	width:85%;
 	margin-top: 3px;
-}
+} */
 
-/* danger class is:#d93025 */;
+/* danger class is:#d93025 ;*/

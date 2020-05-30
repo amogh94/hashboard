@@ -7,6 +7,8 @@ Having started out that way, I have added the following features:
 - a searchbar to filters items by their title.
 - download the list as a CSV file (while implementing search, I somehow lost the list data I previously had, and wished there was a way to recover them - leading to this feature)
 
+**Data**: All data created in and stored by this extension are stored within the browser and nowhere else.
+
 **Credit** to [kunalnarangtheone](https://github.com/kunalnarangtheone/) for naming the extension.
 
 ## Why was this written?

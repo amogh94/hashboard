@@ -23,7 +23,7 @@ And to do this for each URL it asks for - I wanted to improve this experience.
 
 1. You will see this when it is opened for the first time. Hit the plus button to add a new text.
 
-![Alt](https://github.com/amogh94/hashboard/blob/master/screenshots/readme1.JPG "First Time")
+![Opened for the first time ever](https://drive.google.com/uc?export=view&id=1FVoDUqn2eo49yxNStUOW9R5UF6fe8F0o "First Time")
 
 2. Fill out the title and the text that you want to store, and click 'Save'. 
 

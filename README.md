@@ -19,8 +19,6 @@ And to do this for each URL it asks for - I wanted to improve this experience.
 
 # How to use this extension
 
-(**Update**: The looks have changed due to recently added features)
-
 1. You will see this when it is opened for the first time. Hit the plus button to add a new text.
 
 ![Opened for the first time ever](https://drive.google.com/uc?export=view&id=1FVoDUqn2eo49yxNStUOW9R5UF6fe8F0o "First Time")

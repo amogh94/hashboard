@@ -27,15 +27,20 @@ And to do this for each URL it asks for - I wanted to improve this experience.
 
 2. Fill out the title and the text that you want to store, and click 'Save'. 
 
-![Alt](https://github.com/amogh94/hashboard/blob/master/screenshots/readme2.JPG "Adding a new text")
+![Adding a new text](https://drive.google.com/uc?export=view&id=1calRphtD_D_2pSxWD_qX2mB-n0oTTadh "Adding a new text")
 
-3. Your content is now saved and visible. Whenever you open the extension from now on, you will see the following. Use the icons to edit the title or text (URL), copy the text (URL) to clipboard, or delete this entry.
+3. Your content is now saved and visible. Whenever you open the extension from now on, you will see the following. Use the icons to edit the title or text (URL), copy the text (URL) to clipboard, or delete the entry.
 
-![Alt](https://github.com/amogh94/hashboard/blob/master/screenshots/readme3.JPG "Added a new text")
+![Added a new text](https://drive.google.com/uc?export=view&id=1bHFpojsyDJtE9K_4flcaat_QwPbSjSZb "Added a new text")
 
-4. Add, remove, edit, or copy and enjoy! :)
+4. Add more entries, remove any entry, edit an entry, or copy to clipboard.
+![Added more texts](https://drive.google.com/uc?export=view&id=1Gfxf6AT8-jwq7XqzzOPNxle2iYanNzl5 "Added more texts")
 
-![Alt](https://github.com/amogh94/hashboard/blob/master/screenshots/readme4.JPG "Added a new text")
+5. You can also search by title.
+
+![Search by Title](https://drive.google.com/uc?export=view&id=1m-IZ6oJbbeI69L35bG4ACAIy_rTay0z6 "Search by Title")
+
+6. Click the download icon to download all your data as a CSV.
 
 # How to install
 

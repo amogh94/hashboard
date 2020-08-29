@@ -66,7 +66,13 @@ npm install
 npm run build
 ```
 
-- Whenever you change a Vue component or home.js, use the above build command to rebuild the extension. More specifically, you must be looking for the 'dist' folder to refresh when this command executes.
+- Run the following command before you start working on any Vue component or `home.js`. This will automatically build the extension whenever you save a file, and ensures that it always stays upto date with your work.
+```
+npm run watch:dev
+```
+Alternatively, you can run `npm run build` to rebuild the extension manually.
+
+In either scenario, you must be looking for the 'dist' folder to refresh whenever a component is changed.
 
 - To generate the zip file (found in the [dist-zip](https://github.com/amogh94/hashboard/blob/master/dist-zip/) folder), run this command:
 ```

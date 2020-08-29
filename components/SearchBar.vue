@@ -2,7 +2,7 @@
     <div v-if="listexists">
         <input id="searchbar" v-on:keyup="applyFilter" placeholder="Search">
         <img class="download-icon" v-on:click="download" src="icons/download.png" title="Download as CSV"/>
-        <a ref="download" class="hidden" download="MyHashboardData.csv" v-bind:href="'data:application/octet-stream,' + csv">Click here</a>
+        <a ref="download" class="hidden" v-bind:href="'data:application/octet-stream,' + csv">Click here</a>
     </div>
 </template>
 <script>
@@ -24,7 +24,11 @@ export default {
             }
         },
         download(){
-            this.$refs.download.click();
+            let time = new Date().toISOString().slice(0, 19).replace(/\:/g, "_");
+            let name = `MyHashboardData-${time}.csv`;
+            let elem = this.$refs.download;
+            elem.setAttribute("download",name);
+            elem.click();
         }
     },
     props:["listexists","userdata"],

@@ -24,8 +24,9 @@ export default {
             }
         },
         download(){
-            let time = new Date().toISOString().slice(0, 19).replace(/\:/g, "_");
-            let name = `MyHashboardData-${time}.csv`;
+            const tzoffset = (new Date()).getTimezoneOffset() * 60000; //offset in milliseconds
+            const time = (new Date(Date.now() - tzoffset)).toISOString().slice(0, -5).replace(/T/g,"_").replace(/\:/g,"");
+            const name = `MyHashboardData-${time}.csv`;
             let elem = this.$refs.download;
             elem.setAttribute("download",name);
             elem.click();

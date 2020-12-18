@@ -54,7 +54,6 @@ const config = {
       new CopyPlugin({patterns:[
         { from: 'icons', to: 'icons' },
         { from: 'background.js', to: 'background.js' },
-        { from: 'content.js', to: 'content.js'},
         { from: 'home.html', to: 'home.html', transform: transformHtml },
         // { from: 'home_bundle.css', to: 'home_bundle.css'},
         { from: 'manifest.json', to: 'manifest.json'},

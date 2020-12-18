@@ -55,6 +55,11 @@ export default {
 	font-weight: bold;
 }
 
+.dark .edit-actions:not(.cancel) {
+    color: #000010;
+    font-weight: normal;
+}
+
 .cancel {
 	color: #1a73e8;
 	background: white;

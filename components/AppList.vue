@@ -5,6 +5,7 @@
             v-on:updateAtIndex="updateAtIndex"
             v-on:removeAtIndex="removeAtIndex"
             v-on:move="moveUpDown"
+            v-on:pop="pop"
             v-for="(userListItem, index) in userdata"
                 v-bind:nofilter="nofilter" v-bind:item="userListItem" v-bind:key="index">
             </ListItem>
@@ -39,6 +40,9 @@ export default {
             this.userdata[index].title = data.title;
             this.userdata[index].text = data.text;
             this.storeData(this.userdata);
+        },
+        pop() {
+            this.userdata.pop();
         },
         storeData(list) {
             this.$emit("storeData", list);

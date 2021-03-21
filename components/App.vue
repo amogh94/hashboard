@@ -2,7 +2,7 @@
   <div id="app" v-bind:class="mode">
     <AppTitle></AppTitle>
     <DarkModeSlider v-on:modeToggled="modeToggled" v-bind:mode="mode"></DarkModeSlider>
-    <SearchBar v-bind:listexists="listExists" v-bind:userdata="userList"></SearchBar>
+    <SearchBar v-bind:listexists="listExists" v-bind:userdata="userList" v-on:setnofilter="setNoFilter"></SearchBar>
     <AppList v-on:storeData="storeData" v-bind:userdata="userList" v-bind:nofilter="nofilter"></AppList>
     <center>
         <button v-if="nofilter" v-on:click="newListItem">+</button>
@@ -42,6 +42,9 @@ export default {
         modeToggled(newMode) {
             this.mode = newMode;
             this.storeData(this.userList);
+        },
+        setNoFilter(status) {
+            this.nofilter = status;
         },
         storeData(list) {
             chrome.runtime.sendMessage(

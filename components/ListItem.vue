@@ -31,7 +31,7 @@ export default {
         edits(changed, title, text) {
             // if neither title nor text have changed
             if(!(title || text) && this.item.isNew) {
-                this.$parent.userdata.pop();
+                this.$emit("pop");
             } else {
                 let toEmit = false;
                 this.item.isNew = false;

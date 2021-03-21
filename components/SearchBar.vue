@@ -11,13 +11,13 @@ export default {
         applyFilter(event) {
             const text = event.target.value;
             if(text.length) {
-                this.$parent.nofilter = false;
+                this.$emit("setnofilter", false);
                 for(let i in this.userdata) {
                     let pattern = new RegExp(text, 'gi');
                     this.userdata[i].visible = (this.userdata[i].title.match(pattern) != null);
                 }
             } else {
-                this.$parent.nofilter = true;
+                this.$emit("setnofilter", true);
                 for(let i in this.userdata) {
                     this.userdata[i].visible = true;
                 }
@@ -51,7 +51,7 @@ export default {
             csv += obj[headings[0]] + "," + obj[headings[1]] + "\n";
         };
         return {
-            csv: encodeURI(csv)
+            csv: encodeURIComponent(csv)
         };
     }
 }

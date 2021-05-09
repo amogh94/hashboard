@@ -1,8 +1,8 @@
 <template>
-    <div v-if="listexists">
+    <div v-if="listexists || this.userdata.length > 0" v-bind:class="{ hidden: this.userdata.length == 0 }">
         <input id="searchbar" v-on:keyup="applyFilter" placeholder="Search">
         <img class="download-icon" v-on:click="download" src="icons/download.png" title="Download as CSV"/>
-        <a ref="download" class="hidden" v-bind:href="'data:application/octet-stream,' + csv">Click here</a>
+        <a ref="download" class="hidden" v-bind:href="'data:application/octet-stream,' + encodeURIComponent(csv)">Click here</a>
     </div>
 </template>
 <script>
@@ -34,25 +34,25 @@ export default {
         }
     },
     props:["listexists", "userdata"],
-    data:function() {
-        let data = this.userdata;
-        data = data.map(item => {
-            let copy = {};
-            copy.title = item.title;
-            copy.text = item.text;
-            return copy;
-        }); 
-        let headings = ["title", "text"];
-        try{
-            headings = Object.keys(data[0]);
-        } catch(e) {}
-        let csv = headings.join(",") + "\n";
-        for(let obj of data) {
-            csv += obj[headings[0]] + "," + obj[headings[1]] + "\n";
-        };
-        return {
-            csv: encodeURIComponent(csv)
-        };
+    computed: {
+        csv: function() {
+            let data = this.userdata;
+            data = data.map(item => {
+                let copy = {};
+                copy.title = item.title;
+                copy.text = item.text;
+                return copy;
+            }); 
+            let headings = ["title", "text"];
+            try{
+                headings = Object.keys(data[0]);
+            } catch(e) {}
+            let csv = headings.join(",") + "\n";
+            for(let obj of data) {
+                csv += obj[headings[0]] + "," + obj[headings[1]] + "\n";
+            };
+            return csv;
+        }
     }
 }
 </script>

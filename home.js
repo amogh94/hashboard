@@ -8,7 +8,7 @@ import App from './components/App.vue';
 document.addEventListener('DOMContentLoaded', () => {
 	let port = chrome.runtime.connect({name: 'hashboardPort'});
     function enhanceList(list) {
-        list = list.map( item => {
+        list = list.map(item => {
         	if(!item.hasOwnProperty('hideEdit')) {
         		item.hideEdit = false;
         	}

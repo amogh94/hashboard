@@ -51,7 +51,7 @@ const config = {
       new MiniCssExtractPlugin({
         filename: '[name]_bundle.css',
       }),
-      new CopyPlugin({patterns:[
+      new CopyPlugin({patterns: [
         { from: 'icons', to: 'icons' },
         { from: 'background.js', to: 'background.js' },
         { from: 'home.html', to: 'home.html', transform: transformHtml },

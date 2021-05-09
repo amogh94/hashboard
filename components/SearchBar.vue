@@ -36,23 +36,24 @@ export default {
     props:["listexists", "userdata"],
     computed: {
         csv: function() {
-        let data = this.userdata;
-        data = data.map(item => {
-            let copy = {};
-            copy.title = item.title;
-            copy.text = item.text;
-            return copy;
-        }); 
-        let headings = ["title", "text"];
-        try{
-            headings = Object.keys(data[0]);
-        } catch(e) {}
-        let csv = headings.join(",") + "\n";
-        for(let obj of data) {
-            csv += obj[headings[0]] + "," + obj[headings[1]] + "\n";
-        };
-        return csv;
-    }}
+            let data = this.userdata;
+            data = data.map(item => {
+                let copy = {};
+                copy.title = item.title;
+                copy.text = item.text;
+                return copy;
+            }); 
+            let headings = ["title", "text"];
+            try{
+                headings = Object.keys(data[0]);
+            } catch(e) {}
+            let csv = headings.join(",") + "\n";
+            for(let obj of data) {
+                csv += obj[headings[0]] + "," + obj[headings[1]] + "\n";
+            };
+            return csv;
+        }
+    }
 }
 </script>
 <style module>

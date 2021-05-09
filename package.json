@@ -1,7 +1,7 @@
 {
   "name": "hashboard",
   "version": "1.0.0",
-  "description": "\"Hashboard\" is a simple extension to store short texts. The idea is to be able to copy numerous texts (like URLs, names, or any other short texts) to your clipboard, without leaving the current tab. Option to add, edit, copy, and delete are provided.",
+  "description": "\"Hashboard\" is a simple extension to store short texts (like URLs, names, or anything else) for quick reference. The primary intention is to make it easy to copy text to your clipboard, without leaving the current tab. You can also add, edit, copy, delete, reorder and download your list.",
   "main": "app.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

@@ -1,7 +1,8 @@
 {
     "name": "Hashboard",
-    "version": "1.0",
+    "version": "1.0.0",
     "manifest_version": 2,
+    "description": "\"Hashboard\" is a simple extension to store short texts (like URLs, names, or anything else) for quick reference. The primary intention is to make it easy to copy text to your clipboard, without leaving the current tab. You can also add, edit, copy, delete, reorder and download your list.",
     "browser_action": {
         "default_popup": "home.html",
         "default_title": "Hashboard!"

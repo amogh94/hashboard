@@ -1,5 +1,7 @@
 # About
 
+💻 [Download from Chrome Web Store](https://chrome.google.com/webstore/detail/hashboard/hdnlkhonmjioikgblplhilpjibapmlad)
+
 "Hashboard" is a simple extension to store short texts. The idea is to be able to copy numerous texts (like URLs, names, or any other short texts) to your clipboard, without leaving the current tab. Option to add, edit, copy, and delete are provided. 
 
 Having started out that way, I have added the following features:
